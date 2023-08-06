@@ -6,15 +6,14 @@ int main(void) {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    char str[1000000] = {};
     list<char> L;
     int M, idx = 0;
     cin >> M;
-    auto cursor = L.begin();
 
     while(M-->0){
+        char str[1000000] = {};
         cin >> str;
-        cursor = L.end();
+        auto cursor = L.end();
         while(str[idx] != 0){
             char c = str[idx++];
             switch (c){
@@ -41,6 +40,5 @@ int main(void) {
         cout << '\n';
         L.clear();
         idx = 0;
-        fill(str,str+1000000, 0);
     }
 }
