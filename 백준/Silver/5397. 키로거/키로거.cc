@@ -6,12 +6,12 @@ int main(void) {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    list<char> L;
     int M, idx = 0;
     cin >> M;
 
     while(M-->0){
         char str[1000000] = {};
+        list<char> L;
         cin >> str;
         auto cursor = L.end();
         while(str[idx] != 0){
@@ -33,12 +33,9 @@ int main(void) {
                     L.insert(cursor, c);
             }
         }
-        cursor = L.begin();
-        while(cursor!=L.end()){
-            cout << *cursor++;
-        }
+        for(auto i:L)
+            cout << i;
         cout << '\n';
-        L.clear();
         idx = 0;
     }
 }
