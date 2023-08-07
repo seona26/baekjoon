@@ -11,7 +11,7 @@ int main(void) {
     string ans = "";
     
     cin >> n;
-    while(n-->0){
+    while(n--){
         cin >> num;
         if(st.empty()){
             st.push(cnt++);
@@ -21,19 +21,13 @@ int main(void) {
             st.push(cnt++);
             ans +="+\n";
             if(st.top()>num){
-                num = -1;
+                cout << "NO";
+                return 0;
             }
-        }
-        if(num == -1){
-            break;
         }
         st.pop();
         ans +="-\n";
 
     }
-    
-    if(num == -1){
-        cout << "NO";
-    }
-    else    cout << ans;
+    cout << ans;
 }
