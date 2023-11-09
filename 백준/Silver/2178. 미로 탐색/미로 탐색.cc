@@ -11,14 +11,12 @@ void BFS(){
     
     int r = que.front()/m;
     int c = que.front()%m;
-    //cout << r << c << endl;
     int a, b;
     que.pop();
 
     for(int i = 0; i<4; i++){
         a = r+row[i];
         b = c+col[i];
-        //cout << a << b << endl;
         if(a<0 || a>=n) continue;
         if(b<0 || b>=m) continue;
         
@@ -26,15 +24,7 @@ void BFS(){
                 cnt[a][b] = cnt[r][c]+1;
                 que.push(a*m + b);
                 maze[a][b] = '0';
-                //cout << a << b << endl;
             }
-            // else{
-            //     if(maze[a][b]>maze[r][c]+1){
-            //         maze[a][b] = maze[r][c]+1;
-            //         que.push(a*m + b);
-            //     }
-            // }
-            //cout << a << b << endl;
     }
     BFS();
     return;
