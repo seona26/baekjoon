@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 queue<int> que;
 int n, m, cnt[100][100];
 string maze[100];
@@ -20,11 +21,11 @@ void BFS(){
         if(a<0 || a>=n) continue;
         if(b<0 || b>=m) continue;
         
-            if(maze[a][b] == '1'){
-                cnt[a][b] = cnt[r][c]+1;
-                que.push(a*m + b);
-                maze[a][b] = '0';
-            }
+        if(maze[a][b] == '1'){
+            cnt[a][b] = cnt[r][c]+1;
+            que.push(a*m + b);
+            maze[a][b] = '0';
+        }
     }
     BFS();
     return;
@@ -37,10 +38,8 @@ int main(){
     cin >> n >> m;
     for(int i = 0; i<n; i++)
         cin >> maze[i];
-
     que.push(0);
     cnt[0][0] = 1;
     BFS();
-
     cout << cnt[n-1][m-1];
 }
