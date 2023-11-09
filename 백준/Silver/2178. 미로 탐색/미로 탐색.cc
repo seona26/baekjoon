@@ -7,7 +7,7 @@ int row[4] = {-1, 1, 0, 0};
 int col[4] = {0, 0, -1, 1};
 
 void BFS(){
-    if(que.front()==n*m-1 || que.empty()) return;
+    if(que.front()==n*m-1) return;
     
     int r = que.front()/m;
     int c = que.front()%m;
