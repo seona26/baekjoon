@@ -13,7 +13,11 @@ int main(){
         cin >> temp;
         vec.push_back(temp);
     }
-    sort(vec.begin(), vec.end());
+    for(int i = 1; i<N; i++){
+        for(int j = i; j>0; j--){
+            if(vec[j]<vec[j-1]) swap(vec[j], vec[j-1]);
+        }c
+    }
 
     for(auto a: vec)    cout << a << endl;
 }
